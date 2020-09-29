@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-09-29T05:10:06Z" name="NEET Application Test Automation Test Suite" finished-at="2020-09-29T05:10:31Z" duration-ms="25484">
+    <groups>
+    </groups>
+    <test started-at="2020-09-29T05:10:06Z" name="Signinpage" finished-at="2020-09-29T05:10:31Z" duration-ms="25484">
+      <class name="com.qa.Testcase.Signinpage_test">
+        <test-method is-config="true" signature="initialization()[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:06Z" name="initialization" finished-at="2020-09-29T10:40:15Z" duration-ms="8522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialization -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:15Z" name="beforeMethod" finished-at="2020-09-29T10:40:15Z" duration-ms="33" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.gettitle()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="gettitle()[pri:1, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:15Z" name="gettitle" finished-at="2020-09-29T10:40:15Z" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gettitle -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:15Z" name="beforeMethod" finished-at="2020-09-29T10:40:15Z" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.forgotlinkcheck()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="forgotlinkcheck()[pri:2, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:15Z" name="forgotlinkcheck" finished-at="2020-09-29T10:40:15Z" duration-ms="726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- forgotlinkcheck -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:15Z" name="beforeMethod" finished-at="2020-09-29T10:40:15Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.signuplinkcheck()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="signuplinkcheck()[pri:3, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:15Z" name="signuplinkcheck" finished-at="2020-09-29T10:40:17Z" duration-ms="1434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signuplinkcheck -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:17Z" name="beforeMethod" finished-at="2020-09-29T10:40:17Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.emptysigin()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="emptysigin()[pri:4, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:17Z" name="emptysigin" finished-at="2020-09-29T10:40:17Z" duration-ms="172" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emptysigin -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:17Z" name="beforeMethod" finished-at="2020-09-29T10:40:17Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.mobonlysigin()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="mobonlysigin()[pri:5, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:17Z" name="mobonlysigin" finished-at="2020-09-29T10:40:17Z" duration-ms="277" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mobonlysigin -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:17Z" name="beforeMethod" finished-at="2020-09-29T10:40:17Z" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.pwdonlysigin()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="pwdonlysigin()[pri:6, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:17Z" name="pwdonlysigin" finished-at="2020-09-29T10:40:18Z" duration-ms="443" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pwdonlysigin -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:18Z" name="beforeMethod" finished-at="2020-09-29T10:40:18Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.unregistereduser() throws java.lang.InterruptedException,java.awt.AWTException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="unregistereduser()[pri:7, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:18Z" name="unregistereduser" finished-at="2020-09-29T10:40:19Z" duration-ms="1574" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unregistereduser -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:19Z" name="beforeMethod" finished-at="2020-09-29T10:40:19Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.invalidpwd() throws java.awt.AWTException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="invalidpwd()[pri:8, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:19Z" name="invalidpwd" finished-at="2020-09-29T10:40:20Z" duration-ms="641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidpwd -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:20Z" name="beforeMethod" finished-at="2020-09-29T10:40:20Z" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.Siginusingvalidinputs() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="Siginusingvalidinputs()[pri:9, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:20Z" name="Siginusingvalidinputs" finished-at="2020-09-29T10:40:30Z" duration-ms="10029" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Siginusingvalidinputs -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:30Z" name="beforeMethod" finished-at="2020-09-29T10:40:30Z" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.qa.Testcase.Signinpage_test.logout() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="logout()[pri:10, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:30Z" name="logout" finished-at="2020-09-29T10:40:31Z" duration-ms="786" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.qa.Testcase.Signinpage_test@c8c12ac]" started-at="2020-09-29T10:40:31Z" name="tearDown" finished-at="2020-09-29T10:40:31Z" duration-ms="767" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.qa.Testcase.Signinpage_test -->
+    </test> <!-- Signinpage -->
+  </suite> <!-- NEET Application Test Automation Test Suite -->
+</testng-results>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NEET Application Test Automation Test Suite"  parallel="false" thread-count="1">
+
+	<listeners>
+		<listener class-name="ExtentReport.ExtentReporterNG" />
+	</listeners>
+
+
+	<test name="Signinpage">
+		<classes>
+		    <class name="com.qa.Testcase.Signinpage_test"/>
+		</classes>
+	</test>
+	<!--<test name="Contactuspage">
+		<classes>
+			<class name="com.qa.Testcase.Contactuspage_test"/>
+		</classes>
+	</test>
+	<test name="Changepasswordpage">
+		<classes>
+			<class name="com.qa.Testcase.Changepasswordpage_test"/>
+		</classes>
+	</test>-->
+</suite>
