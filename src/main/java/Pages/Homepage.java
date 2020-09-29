@@ -3,6 +3,8 @@ package Pages;
 import com.qa.Base.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 public class Homepage extends TestBase {
     @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[1]/a/div/div/div/h5")
@@ -29,6 +31,13 @@ public class Homepage extends TestBase {
     @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[8]/a")
     private WebElement logout;
 
+    @FindBy(xpath = "//*[@id=\"bd-logout\"]/div/div/div[1]/div/div")
+    private WebElement logoutpop;
+
+    @FindBy(xpath = "//*[@id=\"bd-logout\"]/div/div/div[2]/div/button[2]")
+    private WebElement logoutok;
+
+
     public void selectsub(WebElement e){
         click(e);
     }
@@ -44,5 +53,10 @@ public class Homepage extends TestBase {
     }
     public void logout(){
         elementtoeclickable(logout);
+        waitForVisibility(logoutpop);
+        String popup=logoutpop.getText();
+        System.out.println(popup);
+        Assert.assertTrue(popup.contains("Are you sure you want to logout?"));
+        click(logoutok);
     }
 }

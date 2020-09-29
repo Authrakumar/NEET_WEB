@@ -94,6 +94,7 @@ public class Signinpage_test extends TestBase {
         //testpage.presshomemenu();
         myTestpage.scolltilllogout();
         homepage.logout();
+
     }
 
 }
