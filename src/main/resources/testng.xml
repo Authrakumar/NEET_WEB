@@ -7,19 +7,34 @@
 	</listeners>
 
 
-	<test name="Signinpage">
+	<test name="SIGNIN">
 		<classes>
 		    <class name="com.qa.Testcase.Signinpage_test"/>
 		</classes>
 	</test>
-	<!--<test name="Contactuspage">
+	<test name="HOME">
+		<classes>
+			<class name="com.qa.Testcase.Homepage_test"/>
+		</classes>
+	</test>
+	<test name="TEST">
+		<classes>
+			<class name="com.qa.Testcase.Test_test"/>
+		</classes>
+	</test>
+	<test name="MYTEST">
+		<classes>
+			<class name="com.qa.Testcase.MyTestpage_test"/>
+		</classes>
+	</test>
+	<test name="CONTACTUS">
 		<classes>
 			<class name="com.qa.Testcase.Contactuspage_test"/>
 		</classes>
 	</test>
-	<test name="Changepasswordpage">
+	<test name="CHNAGEPASSWORD">
 		<classes>
 			<class name="com.qa.Testcase.Changepasswordpage_test"/>
 		</classes>
-	</test>-->
+	</test>
 </suite>

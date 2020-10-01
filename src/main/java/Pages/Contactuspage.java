@@ -22,8 +22,11 @@ public class Contactuspage extends TestBase {
     @FindBy(id= "contact_us_button")
     private WebElement submit;
 
-    @FindBy(xpath= "/html/body/div[8]")
+    @FindBy(css= "body > div.sweet-alert.showSweetAlert.visible > p")
     public WebElement popup;
+
+    @FindBy(css= "body > div.sweet-alert.showSweetAlert.visible > p")
+    public WebElement successpopup;
 
     @FindBy(xpath = "//*[@id=\"accordion-menu\"]")
     public WebElement menu;

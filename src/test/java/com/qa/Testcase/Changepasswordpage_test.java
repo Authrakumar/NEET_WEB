@@ -117,5 +117,10 @@ public class Changepasswordpage_test extends TestBase {
         Thread.sleep(2000);
         keyboardenterkey();
     }
+    @Test(priority = 9)
+    public void logout() throws InterruptedException {
+        homepage.scolltilllogout();
+        homepage.logout();
+    }
 }
 

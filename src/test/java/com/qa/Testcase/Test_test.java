@@ -24,7 +24,7 @@ public class Test_test extends TestBase {
     @Test(priority = 1)
     public void Sigin(){
         signinpage.entermobile("8667651940");
-        signinpage.enterpwd("abc@12345");
+        signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
         pageload();
     }
@@ -243,5 +243,12 @@ public class Test_test extends TestBase {
             Thread.sleep(1000);
         }
         testpage.presshomemenu();
+    }
+    @Test(priority = 14)
+    public void logout() throws InterruptedException {
+        //testpage.presshomemenu();
+        homepage.scolltilllogout();
+        homepage.logout();
+
     }
 }

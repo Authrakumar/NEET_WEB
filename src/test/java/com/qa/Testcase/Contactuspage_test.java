@@ -75,9 +75,15 @@ public class Contactuspage_test extends TestBase {
         contactuspage.entercontent("Test");
         contactuspage.pressSubmitbutton();
         String s1=contactuspage.popup.getText();
-        System.out.println(s1);
-    //    Assert.assertTrue(s1.contains("Thoughts shared successfully"));
+        System.out.println("success:"+s1);
+        Assert.assertTrue(s1.contains("Thoughts shared successfully"));
         keyboardenterkey();
+    }
+    @Test(priority = 10)
+    public void logout() throws InterruptedException {
+        driver.navigate().refresh();
+        homepage.scolltilllogout();
+        homepage.logout();
     }
 
 }
