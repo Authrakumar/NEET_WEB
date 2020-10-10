@@ -74,7 +74,7 @@ public class Homepage_test extends TestBase {
     @Test(priority = 5)
     public void logout() throws InterruptedException {
         Thread.sleep(2000);
-        homepage.scolltilllogout();
+        scrolltillend();
         homepage.logout();
     }
 }

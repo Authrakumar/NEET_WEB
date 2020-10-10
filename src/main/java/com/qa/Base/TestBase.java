@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -134,8 +135,15 @@ public class TestBase {
             e.printStackTrace();
         }
     }
-
-
+    public void scrolltillend(){
+        WebElement element = driver.findElement(By.id("/html/body/div[4]"));
+        click(element);
+        element.sendKeys(Keys.END);
+    }
+    public void javascriptclick(WebElement e){
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].click();",e);
+    }
     @AfterTest
     public void tearDown(){
         driver.quit();

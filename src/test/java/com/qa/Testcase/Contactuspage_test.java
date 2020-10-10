@@ -82,7 +82,7 @@ public class Contactuspage_test extends TestBase {
     @Test(priority = 10)
     public void logout() throws InterruptedException {
         driver.navigate().refresh();
-        homepage.scolltilllogout();
+        scrolltillend();
         homepage.logout();
     }
 

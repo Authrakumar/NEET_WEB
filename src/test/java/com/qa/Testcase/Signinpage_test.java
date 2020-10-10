@@ -92,7 +92,7 @@ public class Signinpage_test extends TestBase {
     @Test(priority = 10)
     public void logout() throws InterruptedException {
         //testpage.presshomemenu();
-        homepage.scolltilllogout();
+        scrolltillend();
         homepage.logout();
 
     }

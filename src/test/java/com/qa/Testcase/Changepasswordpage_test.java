@@ -119,7 +119,7 @@ public class Changepasswordpage_test extends TestBase {
     }
     @Test(priority = 9)
     public void logout() throws InterruptedException {
-        homepage.scolltilllogout();
+        scrolltillend();
         homepage.logout();
     }
 }

@@ -3,6 +3,7 @@ package Pages;
 import com.qa.Base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -24,6 +25,12 @@ public class Homepage extends TestBase {
     @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[5]/a/div/div/div/h5")
     public WebElement five;
 
+    //----Menu------//
+  //  @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[3]/a/span[2]")
+    public void menuclick() {
+        WebElement webElement = driver.findElement(By.xpath("//*[@id=\"accordion-menu\"]/li[3]/a/span[2]"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", webElement);
+    }
     @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[5]/a/span[2]")
     private WebElement changepassword;
 
@@ -33,7 +40,7 @@ public class Homepage extends TestBase {
     @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[4]/a/span[2]")
     public WebElement mytest;
 
-    @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[8]/a")
+    @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[8]/a/span[2]")
     private WebElement logout;
 
     @FindBy(xpath = "//*[@id=\"bd-logout\"]/div/div/div[1]/div/div")
@@ -47,6 +54,10 @@ public class Homepage extends TestBase {
 
     @FindBy(xpath = "//*[@id=\"three_slider\"]/div[1]/div/div[1]/div/a/img")
     public WebElement Latest;
+
+    @FindBy(xpath = "//p[@class='pt-1' and not(@disable)]")
+    public WebElement title;
+
 
     public void selectsub(WebElement e){
         click(e);
@@ -68,10 +79,5 @@ public class Homepage extends TestBase {
         System.out.println(popup);
         Assert.assertTrue(popup.contains("Are you sure you want to logout?"));
         click(logoutok);
-    }
-    public void scolltilllogout() throws InterruptedException {
-        WebElement element =driver.findElement(By.xpath("//*[@id=\"accordion-menu\"]/li[8]/a"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-        Thread.sleep(500);
     }
 }

@@ -1,8 +1,11 @@
 package Pages;
 
 import com.qa.Base.TestBase;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Signinpage extends TestBase {
     @FindBy(id = "mobile_no")
@@ -33,6 +36,11 @@ public class Signinpage extends TestBase {
     @FindBy(xpath ="//div[@class='sa-confirm-button-container']")
     public WebElement btnerrorok;
 
+    @FindBy(xpath = " //div[@class='loading-text' and not(@disable)]")
+    private WebElement loadingpage;
+
+
+
     public Signinpage entermobile(String mob){
         sendkeys(fieldmob,mob);
         return this;
@@ -41,9 +49,8 @@ public class Signinpage extends TestBase {
         sendkeys(fieldpwd,pwd);
         return this;
     }
-    public Homepage pressSignin(){
+    public void pressSignin(){
         click(btnsigin);
-        return new Homepage();
     }
     public String geterrortext(WebElement e){
         return getAttribute(e,"Text");
@@ -63,5 +70,10 @@ public class Signinpage extends TestBase {
         clear(fieldmob);
         clear(fieldpwd);
         return this;
+    }
+    public void loading(){
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated((By) loadingpage));
+
     }
 }

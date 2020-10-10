@@ -56,7 +56,7 @@ public class MyTestpage_test extends TestBase {
     @Test(priority = 3)
     public void logout() throws InterruptedException {
         //testpage.presshomemenu();
-        homepage.scolltilllogout();
+        scrolltillend();
         homepage.logout();
     }
 }

@@ -247,7 +247,7 @@ public class Test_test extends TestBase {
     @Test(priority = 14)
     public void logout() throws InterruptedException {
         //testpage.presshomemenu();
-        homepage.scolltilllogout();
+        scrolltillend();
         homepage.logout();
 
     }
