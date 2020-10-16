@@ -17,7 +17,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class TestUtil extends TestBase {
     static JavascriptExecutor js;
-    public static final long Wait =90;
+    public static final long Wait =120;
     public static long PAGE_LOAD_TIMEOUT = 60;
     public static long IMPLICIT_WAIT = 30;
 

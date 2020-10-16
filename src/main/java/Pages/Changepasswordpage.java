@@ -21,11 +21,11 @@ public class Changepasswordpage extends TestBase {
     @FindBy(xpath= "//*[@id=\"validate-form\"]/div[4]/div/button")
     private WebElement btnsubmit;
 
-    @FindBy(xpath = "/html/body/div[4]")
+    @FindBy(css = "body > div.sweet-alert.showSweetAlert.visible > p")
     public WebElement popup;
 
-//    @FindBy(xpath = "/html/body/div[4]")
-//    private WebElement popupok;
+    @FindBy(css="body > div.sweet-alert.showSweetAlert.visible > div.sa-button-container > div > button")
+    public WebElement popupok;
 
     public void enterpwd(String Input){
        sendkeys(edttxtpwd,Input);

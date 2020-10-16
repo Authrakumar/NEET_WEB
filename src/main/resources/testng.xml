@@ -6,7 +6,31 @@
 		<listener class-name="ExtentReport.ExtentReporterNG" />
 	</listeners>
 
-
+	<!--<test name="SIGNUP">
+		<classes>
+			<class name="com.qa.Testcase.Signuppage_test"/>
+		</classes>
+	</test>
+	<test name="FORGOT">
+		<classes>
+			<class name="com.qa.Testcase.Forgotpage_test"/>
+		</classes>
+	</test>
+	<test name="FORGOTOTP">
+		<classes>
+			<class name="com.qa.Testcase.Otpforgotpage_test"/>
+		</classes>
+	</test>
+	<test name="RESETPASSWORD">
+		<classes>
+			<class name="com.qa.Testcase.Resetpasswordpage_test"/>
+		</classes>
+	</test>
+	<test name="CHNAGEPASSWORD">
+		<classes>
+			<class name="com.qa.Testcase.Changepasswordpage_test"/>
+		</classes>
+	</test>
 	<test name="SIGNIN">
 		<classes>
 		    <class name="com.qa.Testcase.Signinpage_test"/>
@@ -16,10 +40,15 @@
 		<classes>
 			<class name="com.qa.Testcase.Homepage_test"/>
 		</classes>
-	</test>
+	</test>-->
 	<test name="TEST">
 		<classes>
 			<class name="com.qa.Testcase.Test_test"/>
+		</classes>
+	</test>
+	<!--<test name="PROFILE">
+		<classes>
+			<class name="com.qa.Testcase.Profilepage_test"/>
 		</classes>
 	</test>
 	<test name="MYTEST">
@@ -31,10 +60,5 @@
 		<classes>
 			<class name="com.qa.Testcase.Contactuspage_test"/>
 		</classes>
-	</test>
-	<test name="CHNAGEPASSWORD">
-		<classes>
-			<class name="com.qa.Testcase.Changepasswordpage_test"/>
-		</classes>
-	</test>
+	</test>-->
 </suite>

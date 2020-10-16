@@ -38,7 +38,7 @@ public class Homepage_test extends TestBase {
         driver.navigate().back();
         homepage.selectsub(homepage.four);
         driver.navigate().back();
-        homepage.selectsub(homepage.five);
+        homepage.selectsub(homepage.QBank);
         driver.navigate().back();
     }
     @Test(priority = 3)

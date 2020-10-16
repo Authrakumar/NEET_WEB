@@ -4,7 +4,6 @@ import Pages.*;
 import com.qa.Base.TestBase;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.lang.reflect.Method;
 
 public class MyTestpage_test extends TestBase {

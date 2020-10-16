@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Testpage extends TestBase {
+
+
     @FindBy(xpath = "//*[@id=\"home2\"]/div/div[1]/a/div/span")
     public WebElement T1;
     @FindBy(xpath = "//*[@id=\"home2\"]/div/div[2]/a/div/span")
@@ -31,6 +33,9 @@ public class Testpage extends TestBase {
     public WebElement T11;
     @FindBy(xpath = "//*[@id=\"home2\"]/div/div[12]/a/div/span")
     public WebElement T12;
+
+
+
 
     @FindBy(xpath = "//*[@id=\"redirect_tag\"]")
     private WebElement instruction;

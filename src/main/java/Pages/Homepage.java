@@ -13,17 +13,17 @@ public class Homepage extends TestBase {
     @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[1]/a/div/div/div/h5")
     public WebElement one;
 
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[1]/a/div/div/div/h5")
+    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[2]/a/div/div/div")
     public WebElement two;
 
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[1]/a/div/div/div/h5")
+    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[3]/a/div/div/div")
     public WebElement three;
 
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[1]/a/div/div/div/h5")
+    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[4]/a/div/div/div")
     public WebElement four;
 
     @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[5]/a/div/div/div/h5")
-    public WebElement five;
+    public WebElement QBank;
 
     //----Menu------//
   //  @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[3]/a/span[2]")

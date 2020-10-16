@@ -120,7 +120,6 @@ public class Profilepage_test extends TestBase{
         Thread.sleep(5000);
         homepage.scrolltillend();
         homepage.logout();
-
     }
 
 }

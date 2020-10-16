@@ -8,7 +8,7 @@ public class Otpforgotpage extends TestBase {
     @FindBy(xpath = "//div[@class=\"sign-form-title mb-4\"]")
     public WebElement otptitle;
 
-    @FindBy(id = "partitioned")
+    @FindBy(xpath = "//*[@id=\"partitioned\"]")
     private WebElement otpfield;
 
     @FindBy(xpath = "//*[@id=\"otp_submit\"]")
@@ -26,11 +26,11 @@ public class Otpforgotpage extends TestBase {
     @FindBy(css= "body > div.sweet-alert.showSweetAlert.visible > div.sa-button-container > div > button")
     public WebElement alertpopupok;
 
-    public Otpforgotpage enterotp(String mob) {
-        sendkeys(otpfield,"otp");
+    public Otpforgotpage enterotp(String otp) {
+        sendkeys(otpfield,otp);
         return this;
     }
-    public Otpforgotpage pressSubmit() {
+    public Otpforgotpage pressproceed() {
         click(btnproceed);
         return this;
     }

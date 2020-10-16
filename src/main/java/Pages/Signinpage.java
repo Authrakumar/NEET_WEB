@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Signinpage extends TestBase {
+    @FindBy(xpath = "//div[@class=\"sign-form-title mb-4\"]")
+    public WebElement signintitle;
+
     @FindBy(id = "mobile_no")
     private WebElement fieldmob;
 

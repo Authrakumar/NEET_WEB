@@ -16,6 +16,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Locatable;
+import org.openqa.selenium.interactions.internal.Coordinates;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -83,6 +85,9 @@ public class TestBase {
         wait = new WebDriverWait (driver, TestUtil.Wait);
         wait.until(ExpectedConditions.visibilityOf(e));
     }
+    public void exceptedcondition(WebElement e) {
+        wait.until(ExpectedConditions.visibilityOf(e));
+    }
     public void sendkeys(WebElement e,String Input){
         waitForVisibility(e);
         e.sendKeys(Input);
@@ -136,9 +141,10 @@ public class TestBase {
         }
     }
     public void scrolltillend(){
-        WebElement element = driver.findElement(By.id("/html/body/div[4]"));
-        click(element);
-        element.sendKeys(Keys.END);
+        WebElement element = driver.findElement(By.xpath("//*[@id=\"accordion-menu\"]/li[8]/a/span[2]"));
+        Coordinates coordinate = ((Locatable)element).getCoordinates();
+        coordinate.onPage();
+        coordinate.inViewPort();
     }
     public void javascriptclick(WebElement e){
         JavascriptExecutor executor = (JavascriptExecutor) driver;
