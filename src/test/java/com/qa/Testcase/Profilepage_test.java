@@ -27,6 +27,11 @@ public class Profilepage_test extends TestBase{
         signinpage.entermobile("8667651940");
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
+        try {
+            exceptedcondition(homepage.one);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         waitForVisibility(homepage.title);
         softAssert(homepage.title.getText(),"Welcome !");
     }

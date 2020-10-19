@@ -44,32 +44,32 @@ public class Otpforgotpage_test extends TestBase {
         forgotpage.pressSubmit();
         Assert.assertTrue(otpforgotpage.otptitle.getText().contains("OTP VERIFICATION"));
     }
-//    @Test(priority = 2)
-//    public void emptycheck() throws InterruptedException {
-//       otpforgotpage.pressproceed();
-//       softAssert(otpforgotpage.alertpopup.getText(),"Please Enter Your OTP");
-//       click(otpforgotpage.alertpopupok);
-//       Thread.sleep(2000);
-//    }
-//    @Test(priority = 3)
-//    public void incorrectotp(){
-//        otpforgotpage.enterotp("1234");
-//        otpforgotpage.pressproceed();
-//        softAssert(otpforgotpage.alertpopup.getText(),"Incorrect OTP");
-//        click(otpforgotpage.alertpopupok);
-//    }
-//    @Test(priority = 4)
-//    public void incomleteotp(){
-//        otpforgotpage.enterotp("12");
-//        otpforgotpage.pressproceed();
-//        softAssert(otpforgotpage.alertpopup.getText(),"Invalid OTP");
-//        click(otpforgotpage.alertpopupok);
-//    }
-    @Test(priority = 5)
-    public void validotp() throws IOException, GeneralSecurityException, InterruptedException {
-        otpforgotpage.enterotp(gmailQuickstart.getmailotp());
-        otpforgotpage.pressproceed();
-        softAssert(resetpasswordpage.Resettitle.getText(),"RESET PASSWORD");
+    @Test(priority = 2)
+    public void emptycheck() throws InterruptedException {
+       otpforgotpage.pressproceed();
+       softAssert(otpforgotpage.alertpopup.getText(),"Please Enter Your OTP");
+       click(otpforgotpage.alertpopupok);
+       Thread.sleep(2000);
     }
+    @Test(priority = 3)
+    public void incorrectotp(){
+        otpforgotpage.enterotp("1234");
+        otpforgotpage.pressproceed();
+        softAssert(otpforgotpage.alertpopup.getText(),"Incorrect OTP");
+        click(otpforgotpage.alertpopupok);
+    }
+    @Test(priority = 4)
+    public void incomleteotp(){
+        otpforgotpage.enterotp("12");
+        otpforgotpage.pressproceed();
+        softAssert(otpforgotpage.alertpopup.getText(),"Invalid OTP");
+        click(otpforgotpage.alertpopupok);
+    }
+//    @Test(priority = 5)
+//    public void validotp() throws IOException, GeneralSecurityException, InterruptedException {
+//        otpforgotpage.enterotp(gmailQuickstart.getmailotp());
+//        otpforgotpage.pressproceed();
+//        softAssert(resetpasswordpage.Resettitle.getText(),"RESET PASSWORD");
+//    }
 
 }

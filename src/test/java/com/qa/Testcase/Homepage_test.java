@@ -26,7 +26,12 @@ public class Homepage_test extends TestBase {
         signinpage.entermobile("8667651940");
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
-        Thread.sleep(5000);
+        try {
+            exceptedcondition(homepage.one);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Thread.sleep(2000);
     }
     @Test(priority = 2)
     public void attenttestone(){
