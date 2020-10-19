@@ -6,7 +6,7 @@
 		<listener class-name="ExtentReport.ExtentReporterNG" />
 	</listeners>
 
-	<!--<test name="SIGNUP">
+	<test name="SIGNUP">
 		<classes>
 			<class name="com.qa.Testcase.Signuppage_test"/>
 		</classes>
@@ -40,13 +40,18 @@
 		<classes>
 			<class name="com.qa.Testcase.Homepage_test"/>
 		</classes>
-	</test>-->
+	</test>
 	<test name="TEST">
 		<classes>
 			<class name="com.qa.Testcase.Test_test"/>
 		</classes>
 	</test>
-	<!--<test name="PROFILE">
+	<test name="DownloadQB">
+		<classes>
+			<class name="com.qa.Testcase.Downloadspage_test"/>
+		</classes>
+	</test>
+	<test name="PROFILE">
 		<classes>
 			<class name="com.qa.Testcase.Profilepage_test"/>
 		</classes>
@@ -60,5 +65,5 @@
 		<classes>
 			<class name="com.qa.Testcase.Contactuspage_test"/>
 		</classes>
-	</test>-->
+	</test>
 </suite>
