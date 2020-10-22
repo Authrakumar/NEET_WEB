@@ -69,7 +69,7 @@ public class Signinpage_test extends TestBase {
         signinpage.pressSignin();
         String s1=signinpage.errorpopup.getText();
         Assert.assertTrue(s1.contains("Sorry ! You don't have an account, proceed to Register"));
-        keyboardenterkey();
+        click(signinpage.btnerrorok);
     }
     @Test(priority = 8)
     public void invalidpwd() throws AWTException {
@@ -79,7 +79,7 @@ public class Signinpage_test extends TestBase {
         signinpage.pressSignin();
         String s1=signinpage.errorpopup.getText();
         Assert.assertTrue(s1.contains("Invalid Password"));
-        keyboardenterkey();
+        click(signinpage.btnerrorok);
     }
     @Test(priority = 9)
     public void Siginusingvalidinputs() throws InterruptedException {

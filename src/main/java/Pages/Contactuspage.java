@@ -25,6 +25,9 @@ public class Contactuspage extends TestBase {
     @FindBy(css= "body > div.sweet-alert.showSweetAlert.visible > p")
     public WebElement popup;
 
+    @FindBy(css = "body > div.sweet-alert.showSweetAlert.visible > div.sa-button-container > div > button")
+    public WebElement popupok;
+
     @FindBy(css= "body > div.sweet-alert.showSweetAlert.visible > p")
     public WebElement successpopup;
 

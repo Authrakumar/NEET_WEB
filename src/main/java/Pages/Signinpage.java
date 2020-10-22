@@ -36,7 +36,7 @@ public class Signinpage extends TestBase {
     @FindBy(xpath = "/html/body/div[4]")
     public WebElement errorpopup;
 
-    @FindBy(xpath ="//div[@class='sa-confirm-button-container']")
+    @FindBy(css ="body > div.sweet-alert.showSweetAlert.visible > div.sa-button-container > div > button")
     public WebElement btnerrorok;
 
     @FindBy(xpath = " //div[@class='loading-text' and not(@disable)]")

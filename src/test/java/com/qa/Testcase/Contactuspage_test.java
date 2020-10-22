@@ -45,14 +45,14 @@ public class Contactuspage_test extends TestBase {
         contactuspage.clearall();
         contactuspage.pressSubmitbutton();
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter your name"));
-        keyboardenterkey();
+        click(contactuspage.popupok);
     }
     @Test(priority = 3)
     public void nameonly() throws AWTException, AWTException {
         contactuspage.entername("uk");
         contactuspage.pressSubmitbutton();
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter your email id"));
-        keyboardenterkey();
+        click(contactuspage.popupok);
     }
     @Test(priority = 4)
     public void name_emailonly() throws AWTException, AWTException {
@@ -61,7 +61,7 @@ public class Contactuspage_test extends TestBase {
         contactuspage.enteremail("uthar.a305@gmail.com");
         contactuspage.pressSubmitbutton();
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter your Thought"));
-        keyboardenterkey();
+        click(contactuspage.popupok);
     }
     @Test(priority = 5)
     public void invalidEmail() throws AWTException, AWTException {
@@ -70,7 +70,7 @@ public class Contactuspage_test extends TestBase {
         contactuspage.enteremail("uthar.a305@g");
         contactuspage.pressSubmitbutton();
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter valid email id"));
-        keyboardenterkey();
+        click(contactuspage.popupok);
     }
     @Test(priority = 6)
     public void sendcontactus() throws AWTException, AWTException {
@@ -82,7 +82,7 @@ public class Contactuspage_test extends TestBase {
         String s1=contactuspage.popup.getText();
         System.out.println("success:"+s1);
         Assert.assertTrue(s1.contains("Thoughts shared successfully"));
-        keyboardenterkey();
+        click(contactuspage.popupok);
     }
     @Test(priority = 10)
     public void logout() throws InterruptedException {

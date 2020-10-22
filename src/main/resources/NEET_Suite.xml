@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="NEET Application Test Automation Test Suite"  parallel="false" thread-count="1">
-
-	<listeners>
-		<listener class-name="ExtentReport.ExtentReporterNG" />
-	</listeners>
-
+	<parameter name = "URl" value="http://neet.m-tutor.com/"/>
 	<test name="SIGNUP">
 		<classes>
 			<class name="com.qa.Testcase.Signuppage_test"/>
@@ -41,11 +37,6 @@
 			<class name="com.qa.Testcase.Homepage_test"/>
 		</classes>
 	</test>
-	<test name="TEST">
-		<classes>
-			<class name="com.qa.Testcase.Test_test"/>
-		</classes>
-	</test>
 	<test name="DownloadQB">
 		<classes>
 			<class name="com.qa.Testcase.Downloadspage_test"/>
@@ -66,4 +57,10 @@
 			<class name="com.qa.Testcase.Contactuspage_test"/>
 		</classes>
 	</test>
+	<test name="TEST">
+		<classes>
+			<class name="com.qa.Testcase.Test_test_Neet"/>
+		</classes>
+	</test>
 </suite>
+

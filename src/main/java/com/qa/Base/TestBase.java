@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -51,9 +52,9 @@ public class TestBase {
         }
         PageFactory.initElements(driver, this);
     }
-
+    @Parameters({"URl"})
     @BeforeTest
-    public static void initialization(){
+    public static void initialization(String URl){
         String browserName = prop.getProperty("browser");
         if(browserName.equals("chrome")){
             System.setProperty("webdriver.chrome.driver", "F://WFH//Drivers//chromedriver.exe");
@@ -76,7 +77,7 @@ public class TestBase {
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
-        driver.get(prop.getProperty("url"));
+        driver.get(URl);
 
 
 
