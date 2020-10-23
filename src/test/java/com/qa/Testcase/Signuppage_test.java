@@ -1,9 +1,6 @@
 package com.qa.Testcase;
 
-import Pages.Homepage;
-import Pages.MyTestpage;
-import Pages.Signinpage;
-import Pages.Signuppage;
+import Pages.*;
 import com.qa.Base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -17,9 +14,11 @@ public class Signuppage_test extends TestBase {
     MyTestpage myTestpage;
     Homepage homepage;
     Signuppage signuppage;
+    Otpforgotpage otpforgotpage;
     @BeforeMethod
     public void beforeMethod(Method m)
     {
+        otpforgotpage=new Otpforgotpage();
         signinpage=new Signinpage();
         myTestpage=new MyTestpage();
         homepage=new Homepage();
@@ -71,7 +70,7 @@ public class Signuppage_test extends TestBase {
     @Test(priority = 8)
     public void invalidpwd() throws AWTException {
         signuppage.clearall();
-        signuppage.entermobile("8252224585");
+        signuppage.entermobile("8526348083");
         signuppage.enterpwd("abc123");
         signuppage.pressSignup();
         String s1=signuppage.errorpopup.getText();
@@ -84,7 +83,6 @@ public class Signuppage_test extends TestBase {
         signuppage.entermobile("8667651940");
         signuppage.enterpwd("abc@123");
         signuppage.pressSignup();
-        softAssert(signuppage.errorpopup.getText(),"Registered Successfully..!");
-        click(signuppage.errorpopupok);
+        Assert.assertTrue(otpforgotpage.otptitle.getText().contains("OTP VERIFICATION"));
     }
 }
