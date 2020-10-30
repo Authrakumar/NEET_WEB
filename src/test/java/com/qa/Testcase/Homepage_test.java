@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
 
-public class Homepage_test extends TestBase {
+public class Homepage_test extends TestBase{
     Homepage homepage;
     Signinpage signinpage;
     Testpage testpage;

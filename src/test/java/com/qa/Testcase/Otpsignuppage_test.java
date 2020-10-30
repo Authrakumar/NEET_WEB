@@ -31,7 +31,7 @@ public class Otpsignuppage_test extends TestBase {
         gmailQuickstart=new GmailQuickstart();
         System.out.println("\n" + "****** Starting Test:"+ m.getName() +"*****"+"\n");
     }
-    @Test(dependsOnGroups = {"A"})
+    @Test(priority = 1)
     public void otptitlecheck() throws InterruptedException {
         signinpage.signuplink();
         softAssert(signuppage.signuptitle.getText(),"SIGN UP");
@@ -43,7 +43,7 @@ public class Otpsignuppage_test extends TestBase {
     @Test(priority = 2)
     public void emptycheck() throws InterruptedException {
         otpSignuppage.pressproceed();
-        softAssert(otpSignuppage.errormsg.getText(),"Please Enter Your OTP");
+        softAssert(otpSignuppage.errormsg.getText(),"Please Enter OTP");
         Thread.sleep(2000);
     }
     @Test(priority = 3)

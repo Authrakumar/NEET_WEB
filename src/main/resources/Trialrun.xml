@@ -1,8 +1,8 @@
 <suite name="NEET Application Test Automation Test Suite"  parallel="false" thread-count="1">
-    <parameter name = "URl" value="http://neet.m-tutor.com/"/>
+    <parameter name = "URl" value="http://jee.m-tutor.com/"/>
     <test name="SIGNUP">
         <classes>
-            <class name="com.qa.Testcase.Otpsignuppage_test"/>
+            <class name="com.qa.Testcase.Signuppage_test"/>
         </classes>
     </test>
 </suite>

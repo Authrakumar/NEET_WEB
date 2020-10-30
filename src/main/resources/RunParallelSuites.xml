@@ -5,7 +5,7 @@
         <listener class-name="ExtentReport.ExtentReporterNG" />
     </listeners>
     <suite-files>
+        <suite-file path="NEET_Suite.xml" />
         <suite-file path="JEE_Suite.xml" />
-        <suite-file path="NEET_Suite.xml " />
     </suite-files>
 </suite>
