@@ -26,35 +26,32 @@ public class Contactuspage_test extends TestBase {
         contactuspage=new Contactuspage();
         System.out.println("\n" + "****** Starting Test:"+ m.getName() +"*****"+"\n");
     }
-    @Test(priority = 1)
-    public void Sigin() throws InterruptedException {
+    @Test
+    public void a_Sigin() throws InterruptedException {
         signinpage.entermobile("8667651940");
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
-        try {
-            exceptedcondition(homepage.one);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Thread.sleep(2000);
-    }
-    @Test(priority = 2)
-    public void emptysubmit() throws InterruptedException, AWTException {
+        invisble(homepage.invisibleelement);
+        exceptedcondition(homepage.subject("Physics"));
         contactuspage.scolltillcontactus();
         homepage.contactus();
+    }
+    @Test
+    public void emptysubmit() throws InterruptedException, AWTException {
         contactuspage.clearall();
         contactuspage.pressSubmitbutton();
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter your name"));
         click(contactuspage.popupok);
     }
-    @Test(priority = 3)
+    @Test
     public void nameonly() throws AWTException, AWTException {
+        contactuspage.clearall();
         contactuspage.entername("uk");
         contactuspage.pressSubmitbutton();
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter your email id"));
         click(contactuspage.popupok);
     }
-    @Test(priority = 4)
+    @Test
     public void name_emailonly() throws AWTException, AWTException {
         contactuspage.clearall();
         contactuspage.entername("uk");
@@ -63,7 +60,7 @@ public class Contactuspage_test extends TestBase {
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter your Thought"));
         click(contactuspage.popupok);
     }
-    @Test(priority = 5)
+    @Test
     public void invalidEmail() throws AWTException, AWTException {
         contactuspage.clearall();
         contactuspage.entername("uk");
@@ -72,7 +69,7 @@ public class Contactuspage_test extends TestBase {
         Assert.assertTrue(contactuspage.popup.getText().contains("Please enter valid email id"));
         click(contactuspage.popupok);
     }
-    @Test(priority = 6)
+    @Test
     public void sendcontactus() throws AWTException, AWTException {
         contactuspage.clearall();
         contactuspage.entername("uk");
@@ -84,11 +81,4 @@ public class Contactuspage_test extends TestBase {
         Assert.assertTrue(s1.contains("Thoughts shared successfully"));
         click(contactuspage.popupok);
     }
-    @Test(priority = 10)
-    public void logout() throws InterruptedException {
-        driver.navigate().refresh();
-        scrolltillend();
-        homepage.logout();
-    }
-
 }

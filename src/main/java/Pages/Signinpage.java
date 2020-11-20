@@ -53,8 +53,14 @@ public class Signinpage extends TestBase {
         return this;
     }
     public void pressSignin(){
+
         click(btnsigin);
     }
+    public void signin(String mob,String pwd){
+        sendkeys(fieldmob,mob);
+        sendkeys(fieldpwd,pwd);
+    }
+
     public String geterrortext(WebElement e){
         return getAttribute(e,"Text");
     }

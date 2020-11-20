@@ -21,45 +21,42 @@ public class Homepage_test extends TestBase{
         testpage=new Testpage();
         System.out.println("\n" + "****** Starting Test:"+ m.getName() +"*****"+"\n");
     }
-    @Test(priority = 1)
-    public void Sigin() throws InterruptedException {
+    @Test
+    public void a_Sigin() throws InterruptedException {
         signinpage.entermobile("8667651940");
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
-        try {
-            exceptedcondition(homepage.one);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Thread.sleep(2000);
+        invisble(homepage.invisibleelement);
+        exceptedcondition(homepage.subject("Physics"));
+
+
     }
-    @Test(priority = 2)
-    public void attenttestone(){
-        homepage.selectsub(homepage.one);
+    @Test
+    public void attenttestPhysics(){
+        homepage.selectsub(homepage.subject("Physics"));
         driver.navigate().back();
-        homepage.selectsub(homepage.two);
+        homepage.selectsub(homepage.subject("Chemistry"));
         driver.navigate().back();
-        homepage.selectsub(homepage.three);
+        homepage.selectsub(homepage.subject("Biology"));
         driver.navigate().back();
-        homepage.selectsub(homepage.four);
+        homepage.selectsub(homepage.subject("All Subjects"));
         driver.navigate().back();
-        homepage.selectsub(homepage.QBank);
+        homepage.selectsub(homepage.subject("Download"));
         driver.navigate().back();
     }
-    @Test(priority = 3)
+    @Test
     public void latest(){
         homepage.selectsub(homepage.Latest);
         testpage.pressinstruction();
         testpage.presshomemenu();
     }
 
-    @Test(priority = 4)
-    public void recentActivities() throws InterruptedException {
+    @Test
+    public void recentActivities() throws Exception {
         int i;
-        homepage.selectsub(homepage.one);
-        String s1=testpage.T2.getText();
-        System.out.println(s1);
-        testpage.selecttest(testpage.T2);
+        homepage.selectsub(homepage.subject("Physics"));
+        fluentwait();
+        elementvisible(testpage.testset("Physics 1",1));
         testpage.pressinstruction();
         String count=testpage.count.getText();
         System.out.println(count);
@@ -74,7 +71,7 @@ public class Homepage_test extends TestBase{
         testpage.presshomemenu();
         String s2=homepage.Recentfirst.getText();
         System.out.println(s2);
-        softAssert(s1,s2);
+       // softAssert(s1,s2);
     }
     @Test(priority = 5)
     public void logout() throws InterruptedException {

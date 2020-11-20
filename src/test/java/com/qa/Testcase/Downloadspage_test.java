@@ -27,19 +27,14 @@ public class Downloadspage_test extends TestBase {
         signinpage.entermobile("8667651940");
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
-        try {
-            exceptedcondition(homepage.one);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Thread.sleep(2000);
+        invisble(homepage.invisibleelement);
+        exceptedcondition(homepage.subject("Physics"));
     }
     @Test(priority = 2)
     public void downloadqb() throws InterruptedException {
-        homepage.selectsub(homepage.QBank);
+        homepage.selectsub(homepage.subject("Download"));
         softAssert(downloadspage.QbTitle.getText(),"DOWNLOAD - Questions and Answers + Solutions");
         click(downloadspage.DownloadQB);
         click(downloadspage.Qbbackarrow);
     }
-
 }

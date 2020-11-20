@@ -21,29 +21,29 @@ public class Forgotpage_test extends TestBase {
         otpforgotpage=new Otpforgotpage();
         System.out.println("\n" + "****** Starting Test:"+ m.getName() +"*****"+"\n");
     }
-    @Test(priority = 1)
-    public void forgotTitle(){
+    @Test
+    public void a_forgotTitle(){
         signinpage.forgotlink();
         softAssert(forgotpage.title.getText(),"FORGOT PASSWORD");
     }
 
-    @Test(priority = 2)
+    @Test
     public void emptysubmit(){
         forgotpage.pressSubmit();
         softAssert(forgotpage.errortext.getText(),"Please Enter Mobile Number");
     }
-    @Test(priority = 3)
+    @Test
     public void invalidmob(){
         forgotpage.entermobile("8667651");
         forgotpage.pressSubmit();
         softAssert(forgotpage.errortext.getText(),"Mobile Number looks incorrect");
     }
-    @Test(priority = 4)
+    @Test(priority = 1)
     public void validmob() throws InterruptedException {
         forgotpage.entermobile("8667651940");
         forgotpage.pressSubmit();
     }
-    @Test(priority = 5)
+    @Test(priority = 2)
     public void backbutton(){
         driver.navigate().back();
         forgotpage.pressBack();

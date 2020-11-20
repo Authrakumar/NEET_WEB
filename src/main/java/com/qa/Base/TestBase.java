@@ -9,26 +9,26 @@ import java.awt.event.KeyEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
+import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.Locatable;
 import org.openqa.selenium.interactions.internal.Coordinates;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 import utils.TestUtil;
 import utils.WebEventListener;
-
 
 
 public class TestBase {
@@ -57,7 +57,7 @@ public class TestBase {
     public static void initialization(String URl){
         String browserName = prop.getProperty("browser");
         if(browserName.equals("chrome")){
-            System.setProperty("webdriver.chrome.driver", "F://WFH//Drivers//chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "F://WFH//Drivers//new//chromedriver.exe");
             driver = new ChromeDriver();
         }
         else if(browserName.equals("FF")){
@@ -66,11 +66,11 @@ public class TestBase {
         }
 
 
-        e_driver = new EventFiringWebDriver(driver);
+        /*e_driver = new EventFiringWebDriver(driver);
         // Now create object of EventListerHandler to register it with EventFiringWebDriver
         eventListener = new WebEventListener();
         e_driver.register(eventListener);
-        driver = e_driver;
+        driver = e_driver;*/
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
@@ -126,10 +126,31 @@ public class TestBase {
                 .executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
     public void elementtoeclickable(WebElement e){
-        wait = new WebDriverWait (driver, TestUtil.Wait);
+        wait = new WebDriverWait (driver, 200);
         WebElement e1 = wait.until(ExpectedConditions.elementToBeClickable(e));
         click(e1);
     }
+    public WebElement elementvisible(WebElement e){
+        wait = new WebDriverWait (driver,200);
+        WebElement e1 = wait.until(ExpectedConditions.visibilityOf(e));
+        click(e1);
+        return e1;
+    }
+    public void visible(WebElement e){
+        wait = new WebDriverWait (driver, 200);
+        WebElement e1 = wait.until(ExpectedConditions.visibilityOf(e));
+    }
+    public void invisble(WebElement e){
+        wait = new WebDriverWait(driver, 200);
+        Boolean e1=wait.until(ExpectedConditions.invisibilityOf(e));
+    }
+    public void fluentwait(){
+        FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(200, TimeUnit.SECONDS)
+                .pollingEvery(50, TimeUnit.SECONDS)
+                .ignoring(NoSuchElementException.class);
+    }
+
 
     public void keyboardenterkey() throws AWTException {
         try {

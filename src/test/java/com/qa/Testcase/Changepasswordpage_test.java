@@ -26,94 +26,88 @@ public class Changepasswordpage_test extends TestBase {
         System.out.println("\n" + "****** Starting Test:" + m.getName() + "*****" + "\n");
     }
 
-    @Test(priority = 1)
-    public void Sigin() throws InterruptedException {
+    @Test
+    public void a_sigin() throws InterruptedException {
         signinpage.entermobile("8667651940");
-        signinpage.enterpwd("abc@12345");
+        signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
-        try {
-            exceptedcondition(homepage.one);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Thread.sleep(2000);
+        invisble(homepage.invisibleelement);
+        exceptedcondition(homepage.subject("Physics"));
+        homepage.changepassword();
     }
 
-    @Test(priority = 2)
+    @Test
     public void emptypwd() throws InterruptedException, AWTException {
-        homepage.changepassword();
+        changepasswordpage.clearall();
         changepasswordpage.pressSubmitbutton();
         System.out.println(changepasswordpage.popup.getText());
         Assert.assertTrue(changepasswordpage.popup.getText().contains("Please Enter Password"));
-        Thread.sleep(2000);
         click(changepasswordpage.popupok);
     }
 
-    @Test(priority = 3)
+    @Test
     public void pwdonly() throws InterruptedException, AWTException {
+        changepasswordpage.clearall();
         changepasswordpage.enterpwd("abc@123");
         changepasswordpage.pressSubmitbutton();
         System.out.println(changepasswordpage.popup.getText());
         Assert.assertTrue(changepasswordpage.popup.getText().contains("Please Enter Confirm Password"));
-        Thread.sleep(2000);
         click(changepasswordpage.popupok);
-        changepasswordpage.clearall();
     }
 
-    @Test(priority = 4)
+    @Test
     public void invalidpwd() throws InterruptedException, AWTException {
-        // homepage.changepassword();
+        changepasswordpage.clearall();
         changepasswordpage.enterpwd("abc123");
         changepasswordpage.enterconpwd("abc123");
         changepasswordpage.pressSubmitbutton();
         System.out.println(changepasswordpage.popup.getText());
         Assert.assertTrue(changepasswordpage.popup.getText().contains("Invalid Password"));
-        Thread.sleep(2000);
         click(changepasswordpage.popupok);
-        changepasswordpage.clearall();
     }
 
-    @Test(priority = 5)
+    @Test
     public void pwdnotmatch() throws InterruptedException, AWTException {
-        //  homepage.changepassword();
+        changepasswordpage.clearall();
         changepasswordpage.enterpwd("abc@123");
         changepasswordpage.enterconpwd("abc@12345");
         changepasswordpage.pressSubmitbutton();
         System.out.println(changepasswordpage.popup.getText());
         Assert.assertTrue(changepasswordpage.popup.getText().contains("Password doesn't match"));
-        Thread.sleep(2000);
         click(changepasswordpage.popupok);
-        changepasswordpage.clearall();
     }
 
-    @Test(priority = 6)
-    public void Changesamepwd() throws InterruptedException, AWTException {
-        //  homepage.changepassword();
+    @Test
+    public void changesamepwd() throws InterruptedException, AWTException {
+        changepasswordpage.clearall();
+        changepasswordpage.enterpwd("abc@123");
+        changepasswordpage.enterconpwd("abc@123");
+        changepasswordpage.pressSubmitbutton();
+        System.out.println(changepasswordpage.popup.getText());
+        Assert.assertTrue(changepasswordpage.popup.getText().contains("Looks you set the old password again ! Please set a new one"));
+        click(changepasswordpage.popupok);
+    }
+
+    @Test(priority = 1)
+    public void changepwd() throws InterruptedException, AWTException {
+        changepasswordpage.clearall();
         changepasswordpage.enterpwd("abc@12345");
         changepasswordpage.enterconpwd("abc@12345");
         changepasswordpage.pressSubmitbutton();
         System.out.println(changepasswordpage.popup.getText());
-        Assert.assertTrue(changepasswordpage.popup.getText().contains("Looks you set the old password again ! Please set a new one"));
-        Thread.sleep(2000);
+        Assert.assertTrue(changepasswordpage.popup.getText().contains("Password Changed Successfully!"));
         click(changepasswordpage.popupok);
-        changepasswordpage.clearall();
     }
-
-    @Test(priority = 7)
-    public void Changepwd() throws InterruptedException, AWTException {
-        //  homepage.changepassword();
+    @Test(priority = 2)
+    public void changepwdhelp() throws InterruptedException, AWTException {
+        homepage.changepassword();
+        changepasswordpage.clearall();
         changepasswordpage.enterpwd("abc@123");
         changepasswordpage.enterconpwd("abc@123");
         changepasswordpage.pressSubmitbutton();
         System.out.println(changepasswordpage.popup.getText());
         Assert.assertTrue(changepasswordpage.popup.getText().contains("Password Changed Successfully!"));
-        Thread.sleep(2000);
         click(changepasswordpage.popupok);
-    }
-    @Test(priority = 9)
-    public void logout() throws InterruptedException {
-        scrolltillend();
-        homepage.logout();
     }
 }
 

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 
 
-public class WebEventListener extends TestBase implements WebDriverEventListener {
+public class WebEventListener {
     public void beforeNavigateTo(String url, WebDriver driver) {
         System.out.println("Before navigating to: '" + url + "'");
     }

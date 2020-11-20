@@ -21,25 +21,20 @@ public class MyTestpage_test extends TestBase {
         testpage=new Testpage();
         System.out.println("\n" + "****** Starting Test:"+ m.getName() +"*****"+"\n");
     }
-    @Test(priority = 1)
-    public void Sigin() throws InterruptedException {
+    @Test
+    public void a_sigin() throws InterruptedException {
         signinpage.entermobile("8667651940");
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
-        try {
-            exceptedcondition(homepage.one);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Thread.sleep(2000);
+        invisble(homepage.invisibleelement);
+        exceptedcondition(homepage.subject("Physics"));
     }
-    @Test(priority = 2)
-    public void mytest() throws InterruptedException {
+    @Test
+    public void mytest() throws Exception {
         int i;
-        homepage.selectsub(homepage.one);
-        String s1=testpage.T2.getText();
-        System.out.println(s1);
-        testpage.selecttest(testpage.T2);
+        homepage.selectsub(homepage.subject("Physics"));
+        fluentwait();
+        elementvisible(testpage.testset("Physics 2",1));
         testpage.pressinstruction();
         String count=testpage.count.getText();
         System.out.println(count);
@@ -55,13 +50,7 @@ public class MyTestpage_test extends TestBase {
         homepage.mytest();
         String s2=myTestpage.Title.getText();
         System.out.println(s2);
-        softAssert(s1,s2);
-    }
-    @Test(priority = 3)
-    public void logout() throws InterruptedException {
-        //testpage.presshomemenu();
-        scrolltillend();
-        homepage.logout();
+      //  softAssert(s1,s2);
     }
 }
 

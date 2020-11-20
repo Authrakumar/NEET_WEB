@@ -26,42 +26,43 @@ public class Signinpage_test extends TestBase {
         homepage=new Homepage();
         System.out.println("\n" + "****** Starting Test:"+ m.getName() +"*****"+"\n");
     }
-
-    @Test(priority = 1)
-    public void gettitle(){
+    @Test
+    public void a_gettitle(){
         String title=driver.getTitle();
         softAssert(title,"M-tutor NEET");
     }
-    @Test(priority = 2)
+    @Test
     public void forgotlinkcheck(){
         signinpage.forgotlink();
         driver.navigate().back();
     }
-    @Test(priority = 3)
+    @Test
     public void signuplinkcheck(){
         signinpage.signuplink();
         driver.navigate().back();
     }
-    @Test(priority = 4)
+    @Test
     public void emptysigin() {
+        signinpage.clearall();
         signinpage.pressSignin();
         softAssert(signinpage.errortextmob.getText(),"Please Enter Mobile Number");
         softAssert(signinpage.errortextpwd.getText(),"Please Enter Password");
     }
-    @Test(priority = 5)
+    @Test
     public void mobonlysigin()  {
+        signinpage.clearall();
         signinpage.entermobile("8667651940");
         signinpage.pressSignin();
         softAssert(signinpage.errortextpwd.getText(),"Please Enter Password");
     }
-    @Test(priority = 6)
+    @Test
     public void pwdonlysigin()   {
         signinpage.clearall();
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
         softAssert(signinpage.errortextmob.getText(),"Please Enter Mobile Number");
     }
-    @Test(priority = 7)
+    @Test
     public void unregistereduser() throws InterruptedException, AWTException {
         signinpage.clearall();
         signinpage.entermobile("8555525222");
@@ -71,7 +72,7 @@ public class Signinpage_test extends TestBase {
         Assert.assertTrue(s1.contains("Sorry ! You don't have an account, proceed to Register"));
         click(signinpage.btnerrorok);
     }
-    @Test(priority = 8)
+    @Test
     public void invalidpwd() throws AWTException {
         signinpage.clearall();
         signinpage.entermobile("825222");
@@ -81,25 +82,13 @@ public class Signinpage_test extends TestBase {
         Assert.assertTrue(s1.contains("Invalid Password"));
         click(signinpage.btnerrorok);
     }
-    @Test(priority = 9)
+    @Test(priority = 1)
     public void Siginusingvalidinputs() throws InterruptedException {
         signinpage.clearall();
         signinpage.entermobile("8667651940");
         signinpage.enterpwd("abc@123");
         signinpage.pressSignin();
-        try {
-            exceptedcondition(homepage.one);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Thread.sleep(2000);
+        invisble(homepage.invisibleelement);
+        exceptedcondition(homepage.subject("Physics"));
     }
-    @Test(priority = 10)
-    public void logout() throws InterruptedException {
-        //testpage.presshomemenu();
-        scrolltillend();
-        homepage.logout();
-
-    }
-
 }

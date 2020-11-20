@@ -3,30 +3,17 @@ package Pages;
 import com.qa.Base.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 public class Homepage extends TestBase {
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[1]/a/div/div/div/h5")
-    public WebElement one;
 
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[2]/a/div/div/div")
-    public WebElement two;
 
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[3]/a/div/div/div")
-    public WebElement three;
-
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[4]/a/div/div/div")
-    public WebElement four;
-
-    @FindBy(xpath = "//*[@id=\"subject-wrap\"]/div/div[5]/a/div/div/div/h5")
-    public WebElement QBank;
-
-    //----Menu------//
-  //  @FindBy(xpath = "//*[@id=\"accordion-menu\"]/li[3]/a/span[2]")
+    public WebElement subject(String Subject){
+        WebElement e=driver.findElement(By.xpath("//h5[contains(@class,'card-title')] [contains(text(),'"+Subject+"')]"));
+        return e;
+    }
     public void menuclick() {
         WebElement webElement = driver.findElement(By.xpath("//*[@id=\"accordion-menu\"]/li[3]/a/span[2]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", webElement);
@@ -46,7 +33,7 @@ public class Homepage extends TestBase {
     @FindBy(xpath = "//*[@id=\"bd-logout\"]/div/div/div[1]/div/div")
     private WebElement logoutpop;
 
-    @FindBy(xpath = "//*[@id=\"bd-logout\"]/div/div/div[2]/div/button[2]")
+    @FindBy(xpath = "//button[@class='btn btn-danger submitbtn px-3']")
     private WebElement logoutok;
 
     @FindBy(css = "#first_slider > div.owl-wrapper-outer > div > div:nth-child(1) > div > a > div > h5")
@@ -55,8 +42,12 @@ public class Homepage extends TestBase {
     @FindBy(xpath = "//*[@id=\"three_slider\"]/div[1]/div/div[1]/div/a/img")
     public WebElement Latest;
 
-    @FindBy(xpath = "//p[@class='pt-1' and not(@disable)]")
+    @FindBy(xpath = "//p[contains(@class,'pt-1')] [contains(text(),'Welcome !')]")
     public WebElement title;
+
+    @FindBy(xpath = "//div[@class='pre-loader']")
+    public WebElement invisibleelement;
+
 
 
     public void selectsub(WebElement e){
@@ -73,7 +64,8 @@ public class Homepage extends TestBase {
         elementtoeclickable(mytest);
     }
     public void logout(){
-        elementtoeclickable(logout);
+        waitForVisibility(logout);
+        click(logout);
         waitForVisibility(logoutpop);
         String popup=logoutpop.getText();
         System.out.println(popup);
